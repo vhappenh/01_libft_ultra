@@ -49,17 +49,24 @@ BSRC :=	ft_lstnew.c\
 		ft_lstiter.c\
 		ft_lstmap.c
 
+GNLSRC := 	get_next_line_bonus.c
+
+PRFSRC := 	ft_printf.c\
+			ft_numbers.c\
+			ft_hexa.c
+
 OBJ := $(SRC:.c=.o)
 
 BOBJ := $(BSRC:.c=.o)
 
+GNLOBJ := $(GNLSRC:.c=.o)
+
+PRFOBJ := $(PRFSRC:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
-
-bonus: $(BOBJ)
-	ar -rcs $(NAME) $(BOBJ)
+	ar -rcs $(NAME) $(OBJ) $(BOBJ) $(GNLOBJ) $(PRFOBJ)
 
 clean:
 	rm -f *.o
