@@ -6,11 +6,11 @@
 /*   By: vhappenh <vhappenh@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 10:57:14 by vhappenh          #+#    #+#             */
-/*   Updated: 2022/11/17 14:26:47 by vhappenh         ###   ########.fr       */
+/*   Updated: 2022/12/03 10:05:16 by vhappenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static void	ft_putnbrlong_fd(long n, int fd)
 {

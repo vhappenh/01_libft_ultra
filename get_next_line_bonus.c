@@ -6,11 +6,11 @@
 /*   By: vhappenh <vhappenh@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 09:50:19 by vhappenh          #+#    #+#             */
-/*   Updated: 2022/11/24 14:29:18 by vhappenh         ###   ########.fr       */
+/*   Updated: 2022/12/03 10:01:16 by vhappenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "libft.h"
 
 static char	*get_line(int fd, char *save)
 {

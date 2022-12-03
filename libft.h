@@ -6,7 +6,7 @@
 /*   By: vhappenh <vhappenh@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:52:01 by vhappenh          #+#    #+#             */
-/*   Updated: 2022/10/27 19:09:24 by vhappenh         ###   ########.fr       */
+/*   Updated: 2022/12/03 10:09:05 by vhappenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stddef.h>
 # include <stdbool.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <stdarg.h>
 # define LIBFT_H
 
 typedef struct s_list
@@ -25,6 +29,7 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+/* libft standard */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -60,6 +65,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
+/* libft bonus */
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -69,4 +75,16 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* get_next_line */
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 123
+# endif
+
+char	*get_next_line(int fd);
+
+/* printf */
+int		ft_printf(const char *test, ...);
+int		ft_hexa(unsigned long input, char c);
+int		ft_numbers(long input);
 #endif

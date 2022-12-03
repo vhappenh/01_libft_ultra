@@ -6,11 +6,11 @@
 /*   By: vhappenh <vhappenh@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:49:55 by vhappenh          #+#    #+#             */
-/*   Updated: 2022/12/01 19:05:31 by vhappenh         ###   ########.fr       */
+/*   Updated: 2022/12/03 10:01:05 by vhappenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_char(int input)
 {

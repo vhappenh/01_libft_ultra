@@ -65,8 +65,11 @@ PRFOBJ := $(PRFSRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(BOBJ) $(GNLOBJ) $(PRFOBJ)
 	ar -rcs $(NAME) $(OBJ) $(BOBJ) $(GNLOBJ) $(PRFOBJ)
+
+#$(NAME): $(BOBJ)
+#	ar -rs $(NAME) $(BOBJ)
 
 clean:
 	rm -f *.o
