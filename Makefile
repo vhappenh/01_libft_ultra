@@ -68,13 +68,13 @@ all: $(NAME)
 $(NAME): $(OBJ) $(BOBJ) $(GNLOBJ) $(PRFOBJ)
 	ar -rcs $(NAME) $(OBJ) $(BOBJ) $(GNLOBJ) $(PRFOBJ)
 
-#$(NAME): $(BOBJ)
-#	ar -rs $(NAME) $(BOBJ)
+#bonus: $(BOBJ)
+#	ar -rcs $(NAME) $(BOBJ)
 
 clean:
 	rm -f *.o
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re:	fclean all
