@@ -6,7 +6,7 @@
 /*   By: vhappenh <vhappenh@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 09:50:19 by vhappenh          #+#    #+#             */
-/*   Updated: 2023/02/16 13:53:49 by vhappenh         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:52:07 by vhappenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,16 @@ static char	*ft_trimmy(char *save)
 	return (save);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int freei)
 {
 	static char	*save[9999];
 	char		*result;
 
+	if (freei == 1)
+	{
+		free (save[fd]);
+		return (NULL);
+	}
 	if (read(fd, NULL, 0) < 0 || fd < 0)
 	{
 		if (save[fd])
@@ -113,24 +118,3 @@ char	*get_next_line(int fd)
 		return (NULL);
 	return (result);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-//	int		fd;
-	char	*line;
-	char	bla;
-	
-	fd = open("testfile.txt", O_RDONLY);
-	if (fd == -1)
-		return (1);
-	line = &bla;
-	while(line)
-	{
-		line = get_next_line(fd);
-		printf("%s", line);
-		free (line);
-	}
-	printf("%s", get_next_line(fd));
-	return (0);
-}*/

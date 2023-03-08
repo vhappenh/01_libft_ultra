@@ -6,7 +6,7 @@
 /*   By: vhappenh <vhappenh@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:52:01 by vhappenh          #+#    #+#             */
-/*   Updated: 2022/12/03 10:09:05 by vhappenh         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:51:36 by vhappenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #  define BUFFER_SIZE 123
 # endif
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int freei);
 
 /* printf */
 int		ft_printf(const char *test, ...);
