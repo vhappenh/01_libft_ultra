@@ -6,7 +6,7 @@
 /*   By: vhappenh <vhappenh@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 09:50:19 by vhappenh          #+#    #+#             */
-/*   Updated: 2023/03/08 20:52:07 by vhappenh         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:48:06 by vhappenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,15 +98,15 @@ char	*get_next_line(int fd, int freei)
 	if (freei == 1)
 	{
 		free (save[fd]);
+		save[fd] = NULL;
 		return (NULL);
 	}
 	if (read(fd, NULL, 0) < 0 || fd < 0)
 	{
 		if (save[fd])
-		{
 			free(save[fd]);
+		if (save[fd])
 			save[fd] = NULL;
-		}
 		return (NULL);
 	}
 	save[fd] = get_line(fd, save[fd]);
